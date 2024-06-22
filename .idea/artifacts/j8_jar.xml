@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="j8:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/j8_jar</output-path>
+    <root id="archive" name="j8.jar">
+      <element id="module-output" name="j8" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/com/fasterxml/jackson/core/jackson-core/2.13.3/jackson-core-2.13.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-base/11/javafx-base-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-base/11/javafx-base-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-fxml/11/javafx-fxml-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-graphics/11/javafx-graphics-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.13.3/jackson-dataformat-yaml-2.13.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-graphics/11/javafx-graphics-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-controls/11/javafx-controls-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/com/fasterxml/jackson/core/jackson-databind/2.13.3/jackson-databind-2.13.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/com/fasterxml/jackson/core/jackson-annotations/2.13.3/jackson-annotations-2.13.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-fxml/11/javafx-fxml-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/openjfx/javafx-controls/11/javafx-controls-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="F:/apache-maven-3.9.7/maven_repository/org/yaml/snakeyaml/1.30/snakeyaml-1.30.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

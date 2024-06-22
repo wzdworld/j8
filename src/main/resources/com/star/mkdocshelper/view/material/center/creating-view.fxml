@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="100.0" minWidth="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.star.mkdocshelper.controller.material.center.CreatingController">
+   <children>
+      <Label layoutX="19.0" layoutY="20.0" prefHeight="40.0" prefWidth="359.0" text="创建成功左侧将显示配置列表，点击配置列表修改对应配置" />
+   </children>
+</AnchorPane>

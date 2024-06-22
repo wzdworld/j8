@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.star.mkdocshelper.controller.MainWindowController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="文件">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#createProject" text="创建静态网站项目" />
+            <MenuItem mnemonicParsing="false" onAction="#openFileSelector" text="打开我的静态网站项目" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="网站类型示例">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showMaterailDemo" text="material主题的网站" />
+            <MenuItem mnemonicParsing="false" onAction="#showMkdocsDemo" text="mkdocs主题的网站" />
+                  <MenuItem mnemonicParsing="false" onAction="#showReadthedocsDemo" text="readthedocs主题的网站" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="帮助">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showHelperWebSite" text="打开帮助文档" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane dividerPositions="0.2505567928730512, 0.7516703786191536" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+            <VBox minWidth="200.0" prefHeight="200.0" prefWidth="100.0" scaleShape="false">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="300.0" text="配置" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="2.0" left="10.0" top="2.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="settngsListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="1000.0" prefWidth="100.0" />
+               </children>
+            </VBox>
+      <AnchorPane id="Content" fx:id="centerPane" minHeight="-1.0" minWidth="-1.0" prefHeight="552.0" prefWidth="492.0">
+               <children>
+                  <Label layoutX="112.0" layoutY="14.0" prefHeight="82.0" prefWidth="264.0" text="欢迎使用MkDocsHelper" textFill="#0195e4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="112.0" layoutY="124.0" mnemonicParsing="false" onAction="#createProject" text="创建静态网站项目" textFill="#28cd28d9">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="112.0" layoutY="205.0" mnemonicParsing="false" onAction="#openFileSelector" text="打开我的静态网站项目">
+                     <tooltip>
+                        <Tooltip text="必须是使用此软件创建的项目">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+      </AnchorPane>
+            <AnchorPane fx:id="commandWindow" minWidth="320.0" prefHeight="200.0">
+               <children>
+                  <Label layoutX="19.0" prefHeight="32.0" prefWidth="211.0" text="本地运行和远程部署窗口">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="localRunBtn" layoutX="189.0" layoutY="89.0" mnemonicParsing="false" onAction="#localRun" prefHeight="15.0" prefWidth="80.0" text="点击运行" textFill="#168321">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                  <Label layoutX="28.0" layoutY="94.0" text="端口" />
+                  <TextField fx:id="portTextField" layoutX="65.0" layoutY="90.0" prefHeight="23.0" prefWidth="106.0" promptText="默认8000端口" />
+                  <Label layoutX="14.0" layoutY="161.0" prefHeight="25.0" prefWidth="264.0" text="2. 远程部署至github(按照以下步骤)">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="hyperlinkForLocalRun" layoutX="99.0" layoutY="52.0" onAction="#openBrowserForLocalRun" text="运行后可点此访问">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Hyperlink>
+                  <Label layoutX="14.0" layoutY="52.0" prefHeight="25.0" prefWidth="80.0" text="1. 本地运行">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink layoutX="23.0" layoutY="200.0" onAction="#showHelpForReadyForGithub" prefHeight="25.0" prefWidth="281.0" text="1. 前提条件(项目能通过SSH推送到GitHub)">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label layoutX="28.0" layoutY="234.0" prefHeight="26.0" prefWidth="201.0" text="2. 创建Github仓库，填写SSH地址" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sshLocationTextField" layoutX="28.0" layoutY="272.0" prefHeight="25.0" prefWidth="272.0" promptText="填写空仓库的SSH地址" />
+                  <Hyperlink layoutX="240.0" layoutY="237.0" onAction="#showHelpForCreateAEmptyRepository" text="如何创建" />
+                  <Button fx:id="deployBtn" layoutX="40.0" layoutY="432.0" mnemonicParsing="false" onAction="#deploy" prefHeight="15.0" prefWidth="92.0" text="部署/更新" textFill="#f50606">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Hyperlink fx:id="hyperlinkAfterDeploy" layoutX="148.0" layoutY="409.0" onAction="#openBrowserForDeploy" prefHeight="21.0" prefWidth="66.0" text="点击访问" />
+                  <Label layoutX="28.0" layoutY="124.0" prefHeight="19.0" prefWidth="201.0" text="注：套接字错误请填写其他端口" textFill="#33333382" />
+                  <Hyperlink fx:id="hyperlinkAfterAlreadyDeploy" layoutX="146.0" layoutY="409.0" onAction="#openBrowserForDeploy" prefHeight="21.0" prefWidth="150.0" text="已经部署过？直接访问" />
+                  <Label layoutX="28.0" layoutY="313.0" prefHeight="26.0" prefWidth="201.0" text="3. 填写提交时的用户标识（可选）" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="40.0" layoutY="339.0" prefHeight="61.0" prefWidth="243.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="44.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="156.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="邮箱" GridPane.rowIndex="1" />
+                        <TextField fx:id="gitUserTextField" prefHeight="23.0" prefWidth="98.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="gitEmailField" prefHeight="23.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="用户名" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="28.0" layoutY="406.0" prefHeight="26.0" prefWidth="128.0" text="4. 点击部署/更新" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Label fx:id="statusLeftLabel" maxHeight="1.7976931348623157E308" maxWidth="450.0" prefHeight="15.0" prefWidth="177.0" text="欢迎使用" textFill="#514848" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="14.0" fx:id="x3" />
+          </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+        </Label>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+    </HBox>
+  </children>
+</VBox>

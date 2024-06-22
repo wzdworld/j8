@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.star</groupId>
+    <artifactId>j8</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <!--<dependency>-->
+        <!--    <groupId>org.openjfx</groupId>-->
+        <!--    <artifactId>javafx-controls</artifactId>-->
+        <!--    <version>17.0.6</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--    <groupId>org.openjfx</groupId>-->
+        <!--    <artifactId>javafx-fxml</artifactId>-->
+        <!--    <version>17.0.6</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11</version>
+        </dependency>
+
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+        </dependency>
+
+        <!-- YAML和Java对象的相互转化 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+        <!--junit-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <executions>
+                    <execution>
+                        <!-- Default configuration for running with: mvn clean javafx:run -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>com.star.mkdocshelper.Main</mainClass>
+                            <launcher>MkDocsHelper</launcher>
+                            <jlinkZipName>MkDocsHelper</jlinkZipName>
+                            <jlinkImageName>MkDocsHelperZip</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <stripDebug>true</stripDebug>
+                            <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.github.fvarrui</groupId>
+                <artifactId>javapackager</artifactId>
+                <version>1.6.6</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <!-- 启动类 -->
+                            <mainClass>com.star.mkdocshelper.Main</mainClass>
+                            <!--  添加精简jre缺少的模块  -->
+                            <additionalModules>
+                                <!--  我这里自动生成的精简jre缺少这个模块，运行会报错  -->
+                                <additionalModule>jdk.charsets</additionalModule>
+                            </additionalModules>
+                            <!-- 精简版jre -->
+                            <bundleJre>false</bundleJre>
+                            <jrePath>E:\jdk_new\jdk1.8.0_321\jre</jrePath>
+                            <!-- 生成安装包 -->
+                            <generateInstaller>false</generateInstaller>
+                            <!-- 不使用管理员身份打开程序 -->
+                            <administratorRequired>false</administratorRequired>
+                            <!-- 将指定文件夹包含到生成的程序路径 -->
+                            <!--<additionalResources>-->
+                            <!--    <additionalResource>D:\projects\aio\config</additionalResource>-->
+                            <!--    <additionalResource>D:\projects\aio\logs</additionalResource>-->
+                            <!--    <additionalResource>D:\projects\aio\parameter</additionalResource>-->
+                            <!--</additionalResources>-->
+                            <!-- 平台 -->
+                            <platform>windows</platform>
+                            <name>MkDocsHelper</name>
+                            <!-- exe 名称，通过引用的方式 -->
+                            <displayName>${name}</displayName>
+                            <!-- 虚拟机参数 -->
+                            <vmArgs>
+                                <vmArg>--add-opens java.base/java.lang=ALL-UNNAMED</vmArg>
+                            </vmArgs>
+                            <!-- 特定平台参数 -->
+<!--                            <winConfig>-->
+<!--                                &lt;!&ndash; 软件图标 &ndash;&gt;-->
+<!--                                <icoFile>D:\projects\aio\src\main\resources\icon\logo.ico</icoFile>-->
+<!--                            </winConfig>-->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
